@@ -48,6 +48,15 @@
   (q+:add-widget main-layout canvas)
   (q+:add-layout main-layout side-layout))
 
+(define-override (main-window close-event) (event)
+  (when (enum-equal (q+:qmessagebox.no)
+		    (q+:qmessagebox-question main-window
+					     "Confirmation"
+					     "Are you sure you want to exit LineM?"
+					     (+ (q+:qmessagebox.yes) (q+:qmessagebox.No))
+					     (q+:qmessagebox.no)))
+    (q+:ignore event)))
+
 (defmethod initialize-instance :after ((this main-window) &key)
   (q+:set-window-title this "LineM")
   (q+:show this)
