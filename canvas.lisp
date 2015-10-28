@@ -76,7 +76,9 @@
 						      (q+:qdir-home-path)
 						      "Images(*.png)")))
     (when (> (length file-name) 0)
-      (q+:save (image this) (concatenate 'string file-name ".png") "png"))))
+      (q+:save (image this)
+	       (concatenate 'string file-name ".png")
+	       "png"))))
 
 (define-override (canvas key-press-event) (event)
   (let ((key (q+:key event)))
@@ -115,4 +117,5 @@
 (define-override (canvas paint-event) (event)
   (with-finalizing ((painter (q+:make-qpainter canvas)))
     (q+:draw-image painter (q+:make-qpoint 0 0) (image canvas))
-    (draw-cursor canvas painter)))
+    (when (q+:under-mouse canvas)
+      (draw-cursor canvas painter))))
