@@ -1,6 +1,6 @@
 #+CAPTION: Created with LineM.
 #+NAME: Kaumin Lisp
-[[http://i.imgur.com/HK7lxQx.png]]
+[[http://i.imgur.com/LIB4vVY.png]]
 
 * About
 

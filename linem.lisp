@@ -5,9 +5,12 @@
 (defconstant +golden-ratio+ 1.618034)
 
 (define-widget main-window (QWidget)
-  ())
+  ((image-width :accessor image-width :initarg :image-width :initform 640)
+   (image-height :accessor image-height :initarg :image-height :initform 480)))
 
-(define-subwidget (main-window canvas) (make-instance 'canvas))
+(define-subwidget (main-window canvas) (make-instance 'canvas
+						      :width (image-width main-window)
+						      :height (image-height main-window)))
 
 (define-subwidget (main-window color-button) (q+:make-qpushbutton)
   (q+:set-style-sheet color-button "background-color:rgb(128,0,0)")
@@ -48,12 +51,12 @@
 (defmethod initialize-instance :after ((this main-window) &key)
   (q+:set-window-title this "LineM")
   (q+:show this)
-  (q+:set-fixed-width this (round (* +golden-ratio+ (q+:height this))))
+  (q+:set-fixed-width this (q+:width this))
   (q+:set-fixed-height this (q+:height this)))
 
-(defun start ()
+(defun start (&key (width 640) (height 480))
   (make-qapplication)
-  (let ((window (make-instance 'main-window)))
+  (let ((window (make-instance 'main-window :image-width width :image-height height)))
     (q+:exec *qapplication*)
     (finalize window)
     (trivial-garbage:gc :full t)))

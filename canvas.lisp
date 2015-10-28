@@ -41,10 +41,7 @@
     (secondary-color this)))
 
 (defmethod swap-color ((this canvas))
-  (with-slots (color-flag) this
-    (if color-flag
-	(setf color-flag nil)
-	(setf color-flag t)))
+  (setf (color-flag this) (not (color-flag this)))
   (q+:set-color (pen this) (current-color this))
   (q+:set-pen (painter this) (pen this))
   (signal! this (color-swapped)))
