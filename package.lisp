@@ -1,3 +1,4 @@
 (in-package #:cl-user)
 (defpackage #:linem
-  (:use #:cl+qt))
+  (:use #:cl+qt)
+  (:export :start))

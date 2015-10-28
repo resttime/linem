@@ -1,0 +1,18 @@
+#+CAPTION: Created with LineM.
+#+NAME: Kaumin Lisp
+[[http://i.imgur.com/HK7lxQx.png]]
+
+* About
+
+What can one create given only a simple tool? LineM believes the only limitations are from the artist.
+
+* How to Use
+
+- <Left Click> :: Draw
+- <Scroll Up> :: Increase Brush Size
+- <Scroll Down> :: Decrease Brush Size
+- <1 - 9> :: Set Brush Size
+- <s> :: Prompt to Save Image
+- <c> :: Prompt to Clear Canvas
+- <x> :: Swap Colors
+
