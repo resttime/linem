@@ -1,12 +1,31 @@
-#+CAPTION: Created with LineM.
+#+CAPTION: Cirno discovers the beauty of lisp.
 #+NAME: Kaumin Lisp
-[[http://i.imgur.com/5vAeawT.png]]
+[[http://i.imgur.com/HsD86M7.png]]
 
 * About
 
-What can one create given only a simple tool? LineM believes the only limitations are from the artist.
+LineM is a very easy to use drawing application which provides everything needed to carve cute lines onto a canvas.
+
+** Features
+
+- Choose between the awesome colors available: Radical Red or Pretty Pink
+- Morph the brush size with number keys or the mouse scroll
+- Watch the mouse cursor automatically adapt to the brush
+- /!Alien technology!/
+- Clear the canvas
+- Save the canvas
+- Cute lines
+- Buttons
 
 * How to Use
+
+#+BEGIN_SRC common-lisp
+;; First make sure LineM is in a locatable place.
+;; Next decide the width and height of your canvas.
+;; Start LineM and draw!
+(ql:quickload :linem)
+(linem:start :width 640 :height 480)
+#+END_SRC
 
 - <Left Click> :: Draw
 - <Scroll Up> :: Increase Brush Size
