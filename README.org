@@ -1,10 +1,10 @@
 #+CAPTION: Cirno discovers the beauty of lisp.
-#+NAME: Kaumin Lisp
+#+NAME: Cirno Lisp
 [[http://i.imgur.com/HsD86M7.png]]
 
 * About
 
-LineM is a very easy to use drawing application which provides everything needed to carve cute lines onto a canvas.
+LineM is a very easy to use drawing application which provides everything needed to carve lines onto a canvas.
 
 ** Features
 
@@ -17,10 +17,15 @@ LineM is a very easy to use drawing application which provides everything needed
 - Cute lines
 - Buttons
 
+** Depends On
+
+- Qtools (Qt4)
+- Having fun
+
 * How to Use
 
 #+BEGIN_SRC common-lisp
-;; First make sure LineM is in a locatable place.
+;; First ensure LineM is in a locatable place.
 ;; Next decide the width and height of your canvas.
 ;; Start LineM and draw!
 (ql:quickload :linem)
@@ -34,4 +39,3 @@ LineM is a very easy to use drawing application which provides everything needed
 - <s> :: Prompt to Save Image
 - <c> :: Prompt to Clear Canvas
 - <x> :: Swap Colors
-

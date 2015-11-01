@@ -68,4 +68,4 @@
   (let ((window (make-instance 'main-window :image-width width :image-height height)))
     (q+:exec *qapplication*)
     (finalize window)
-    (trivial-garbage:gc :full t)))
+    (tg:gc :full t)))

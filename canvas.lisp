@@ -23,15 +23,19 @@
     (setf image (q+:make-qimage width height (q+:qimage.format_argb32)))
     (q+:fill (image this) (secondary-color this))
     (setf painter (q+:make-qpainter image))
+    (initialize-pen this)
+    (q+:set-mouse-tracking this t)
+    (with-finalizing ((cursor (q+:make-qcursor (q+:qt.blank-cursor))))
+      (q+:set-cursor this cursor))))
+
+(defmethod initialize-pen ((this canvas))
+  (with-slots (pen) this
     (q+:set-brush pen (q+:make-qbrush (primary-color this) (q+:qt.solid-pattern)))
     (q+:set-width pen (size this))
     (q+:set-style pen (q+:qt.solid-line))
     (q+:set-cap-style pen (q+:qt.round-cap))
     (q+:set-join-style pen (q+:qt.round-join))
-    (q+:set-pen painter pen)
-    (q+:set-mouse-tracking this t)
-    (with-finalizing ((cursor (q+:make-qcursor (q+:qt.blank-cursor))))
-      (q+:set-cursor this cursor))))
+    (q+:set-pen (painter this) pen)))
 
 (define-signal (canvas color-swapped) ())
 
