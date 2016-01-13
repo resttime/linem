@@ -63,9 +63,7 @@
   (q+:set-fixed-width this (q+:width this))
   (q+:set-fixed-height this (q+:height this)))
 
-(defun start (&key (width 640) (height 480))
-  (make-qapplication)
-  (let ((window (make-instance 'main-window :image-width width :image-height height)))
-    (q+:exec *qapplication*)
-    (finalize window)
-    (tg:gc :full t)))
+(defun start (&optional (width 640) (height 480))
+  (with-main-window (window (make-instance 'main-window
+					   :image-width width
+					   :image-height height))))

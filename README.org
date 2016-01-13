@@ -4,11 +4,11 @@
 
 * About
 
-LineM is a very easy to use drawing application which provides everything needed to carve lines onto a canvas.
+LineM is a very easy to use drawing program which provides everything needed to carve lines onto a canvas.
 
 ** Features
 
-- Choose between the awesome colors available: Radical Red or Pretty Pink
+- Choose between the awesome colors available: Radical Red and Pretty Pink
 - Morph the brush size with number keys or the mouse scroll
 - Watch the mouse cursor automatically adapt to the brush
 - /!Alien technology!/
@@ -27,9 +27,9 @@ LineM is a very easy to use drawing application which provides everything needed
 #+BEGIN_SRC common-lisp
 ;; First ensure LineM is in a locatable place.
 ;; Next decide the width and height of your canvas.
-;; Start LineM and draw!
+;; Now start LineM and have fun!
 (ql:quickload :linem)
-(linem:start :width 640 :height 480)
+(linem:start 640 480)
 #+END_SRC
 
 - <Left Click> :: Draw
